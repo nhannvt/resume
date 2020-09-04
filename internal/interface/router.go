@@ -30,7 +30,7 @@ func (r *router) Setup() {
 	r.app.NoRoute(notFoundHandler.NotFound)
 
 	r.app.GET("/", func(c *gin.Context) {
-		r.LoadHTMLGlob("templates/*")
+		r.app.LoadHTMLGlob("templates/*")
 		// Call the HTML method of the Context to render a template
 		c.HTML(
 			// Set the HTTP status to 200 (OK)
