@@ -32,7 +32,7 @@ func (r *router) Setup() {
 	r.app.NoRoute(notFoundHandler.NotFound)
 
 	r.app.GET("/", func(c *gin.Context) {
-		router.LoadHTMLGlob(filepath.Join(os.Getenv("GOPATH"),
+		r.app.LoadHTMLGlob(filepath.Join(os.Getenv("GOPATH"),
 			"src/github.com/nhannvt/resume/internal/interface/templates/*"))
 		// Call the HTML method of the Context to render a template
 		c.HTML(
