@@ -2,6 +2,8 @@ package api
 
 import (
 	"net/http"
+	"os"
+	"path/filepath"
 
 	"github.com/gin-gonic/gin"
 	"github.com/nhannvt/resume/internal/registry"
@@ -30,7 +32,8 @@ func (r *router) Setup() {
 	r.app.NoRoute(notFoundHandler.NotFound)
 
 	r.app.GET("/", func(c *gin.Context) {
-		r.app.LoadHTMLGlob("templates/*")
+		router.LoadHTMLGlob(filepath.Join(os.Getenv("GOPATH"),
+			"src/github.com/nhannvt/resume/internal/interface/templates/*"))
 		// Call the HTML method of the Context to render a template
 		c.HTML(
 			// Set the HTTP status to 200 (OK)
