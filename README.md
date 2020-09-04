@@ -43,3 +43,7 @@ This project has  4 Domain layer :
 
  # Run
  cd tools && ./start_api.sh
+
+
+ # Golang Reference:
+ https://www.bookstack.cn/read/gin-en/html-rendering
