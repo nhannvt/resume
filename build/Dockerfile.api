@@ -1,0 +1,15 @@
+FROM golang:1.12-alpine3.10
+
+ARG USER=23hdev
+
+RUN apk add --no-cache git
+
+ENV CGO_ENABLED 0
+ENV GO111MODULE on
+
+RUN mkdir -p /go/src/github.com/nhannvt/resume
+
+RUN addgroup -S $USER && adduser -S $USER -G $USER
+
+# docker image build -t sforum-api:dev -f Dockerfile.api .
+# docker container run -it --rm -p 9000:8080 -v ${PWD}:/go/src/github.com/nhannvt/resume sforum-api:dev /bin/sh
