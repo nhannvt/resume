@@ -42,7 +42,7 @@ func (r *router) Setup() {
 			"index.html",
 			// Pass the data that the page uses (in this case, 'title')
 			gin.H{
-				"title": "Home Page",
+				"title": "Nguyen Van Trong Nhan",
 			},
 		)
 
