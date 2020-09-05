@@ -47,3 +47,4 @@ This project has  4 Domain layer :
 
  # Golang Reference:
  https://www.bookstack.cn/read/gin-en/html-rendering
+ https://eli.thegreenplace.net/2019/simple-go-project-layout-with-modules/

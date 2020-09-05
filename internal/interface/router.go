@@ -31,6 +31,14 @@ func (r *router) Setup() {
 	notFoundHandler := r.registry.NewNotFoundHandler()
 	r.app.NoRoute(notFoundHandler.NotFound)
 
+	r.app.Static("/assets", filepath.Join(os.Getenv("GOPATH"),
+	"src/github.com/nhannvt/resume/static/assets"))
+
+
+	r.app.StaticFile("/NhanNguyen.pdf", filepath.Join(os.Getenv("GOPATH"),
+	"src/github.com/nhannvt/resume/static/NhanNguyen.pdf"))
+
+
 	r.app.GET("/", func(c *gin.Context) {
 		r.app.LoadHTMLGlob(filepath.Join(os.Getenv("GOPATH"),
 			"src/github.com/nhannvt/resume/internal/interface/templates/*"))
